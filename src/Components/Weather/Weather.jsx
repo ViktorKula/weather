@@ -16,18 +16,13 @@ const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
 
 const Weather = () => {
-
-
     let api_key = "a5ef6c101e30f0a695cd72fad33966a2";
-
     const [wicon, setWicon] = useState(cloud_icon);
     const [showButton, setShowButton] = useState(false);
-
     const [forecast, setForecast] = useState([]);
     // eslint-disable-next-line no-unused-vars
     const [showForecast, setShowForecast] = useState(false);
     const [isForecastShown, setIsForecastShown] = useState(false);
-
 
     const search = async () => {
         setShowButton(true);
@@ -36,7 +31,6 @@ const Weather = () => {
             return 0;
         }
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${api_key}`;
-
         let response = await fetch(url);
         let data = await response.json();
 
@@ -77,7 +71,7 @@ const Weather = () => {
     const fetchForecast = async () => {
         const city = document.getElementsByClassName("cityInput")[0].value;
         if (!city) return;
-        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=Metric&appid=a8bc95b3bb0f5d240c2b5eb24a52f160`;
+        const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=Metric&appid=a5ef6c101e30f0a695cd72fad33966a2`;
         const response = await fetch(forecastUrl);
         const data = await response.json();
         if (data.cod === "200") {
