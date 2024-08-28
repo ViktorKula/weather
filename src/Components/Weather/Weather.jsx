@@ -112,7 +112,7 @@ const Weather = () => {
                 <div className="search-icon" onClick={() => {
                     search()
                 }}>
-                    <img src={search_icon} alt=""/>
+                    <img src={ search_icon } alt=""/>
                 </div>
             </div>
             <div className="weather-image">
